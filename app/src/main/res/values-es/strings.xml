@@ -28,4 +28,6 @@
     <string name="users_item_imgPhoto">Foto</string>
     <string name="users_lblEmptyView">No hay usuarios</string>
     <string name="users_add">Añadir usuario</string>
+    <string name="users_deleted">%1$s borrado</string>
+    <string name="users_undo">Deshacer</string>
 </resources>

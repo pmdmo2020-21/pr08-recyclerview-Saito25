@@ -39,7 +39,7 @@ object DataBase : DataSource {
     }
 
     private fun updateStudentsLiveDate() {
-        usersLiveDate.value = users.sortedBy { it.id }
+        usersLiveDate.value = users.sortedBy { it.name }
     }
 }
 // TODO:

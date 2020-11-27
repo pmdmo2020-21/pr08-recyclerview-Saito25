@@ -16,6 +16,7 @@ import es.iessaladillo.pedrojoya.pr08.databinding.UserActivityBinding
 import es.iessaladillo.pedrojoya.pr08.utils.SoftInputUtils
 import es.iessaladillo.pedrojoya.pr08.utils.loadUrl
 import es.iessaladillo.pedrojoya.pr08.utils.observeEvent
+import java.lang.RuntimeException
 
 class EditUserActivity : AppCompatActivity() {
 
@@ -121,6 +122,7 @@ class EditUserActivity : AppCompatActivity() {
     }
 
     // FIN NO TOCAR
+
 
     private fun onSave() {
         val name = binding.etxtUserName.text.toString()

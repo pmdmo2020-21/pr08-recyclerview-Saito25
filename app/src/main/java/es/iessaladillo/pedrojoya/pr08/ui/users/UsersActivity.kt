@@ -7,6 +7,7 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.*
+import com.google.android.material.snackbar.Snackbar
 import es.iessaladillo.pedrojoya.pr08.R
 import es.iessaladillo.pedrojoya.pr08.data.DataBase
 import es.iessaladillo.pedrojoya.pr08.data.model.User
@@ -49,11 +50,9 @@ class UsersActivity : AppCompatActivity() {
             layoutManager = GridLayoutManager(this@UsersActivity, resources.getInteger(R.integer.users_grid_columns))
             addItemDecoration(DividerItemDecoration(this@UsersActivity, RecyclerView.VERTICAL))
             itemAnimator = DefaultItemAnimator()
-            setOnSwipeListener { viewHolder, direction ->
+            setOnSwipeListener(swipeDirs = ItemTouchHelper.RIGHT) { viewHolder, direction ->
                 if (direction == ItemTouchHelper.RIGHT) {
                     deleteUser(viewHolder.bindingAdapterPosition)
-                } else {
-                    editUser(viewHolder.bindingAdapterPosition)
                 }
             }
         }
@@ -87,6 +86,16 @@ class UsersActivity : AppCompatActivity() {
     private fun deleteUser(position: Int) {
         val user: User = listAdapter.currentList[position]
         viewModel.delete(user)
+        showUndo(user)
+    }
+
+    private fun showUndo(user: User) {
+        Snackbar.make(
+                binding.root,
+                getString(R.string.users_deleted, user.name),
+                Snackbar.LENGTH_LONG)
+                .setAction(R.string.users_undo) { viewModel.addStudent(user) }
+                .show()
     }
 
 
