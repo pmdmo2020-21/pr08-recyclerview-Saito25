@@ -1,7 +1,7 @@
-package es.iessaladillo.pedrojoya.pr06.data
+package es.iessaladillo.pedrojoya.pr08.data
 
 import androidx.lifecycle.LiveData
-import es.iessaladillo.pedrojoya.pr06.data.model.User
+import es.iessaladillo.pedrojoya.pr08.data.model.User
 
 interface DataSource {
 

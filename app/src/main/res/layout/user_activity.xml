@@ -1,10 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/clRoot"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clUserRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <!-- Los iconos tienen una anchura y altura de @dimen/user_button_min_width -->
+    <TextView
+        android:id="@+id/txtUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_2x"
+        android:layout_marginTop="@dimen/margin_2x"
+        android:hint="@string/user_txtName"
+        android:labelFor="@+id/etxtUserName"
+        android:text="@string/user_lblName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
 
+    <EditText
+        android:id="@+id/etxtUserName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_2x"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/user_txtName"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtUserName"
+        app:layout_constraintTop_toBottomOf="@+id/txtUserName"
+        tools:text="hola" />
+
+    <TextView
+        android:id="@+id/txtUserEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_2x"
+        android:hint="@string/user_txtEmail"
+        android:labelFor="@+id/etxtUserEmail"
+        android:text="@string/user_lblEmail"
+        app:layout_constraintStart_toStartOf="@+id/etxtUserName"
+        app:layout_constraintTop_toBottomOf="@+id/etxtUserName" />
+
+    <EditText
+        android:id="@+id/etxtUserEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/user_txtEmail"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toStartOf="@+id/ivUserEmailIcon"
+        app:layout_constraintStart_toStartOf="@+id/txtUserEmail"
+        app:layout_constraintTop_toBottomOf="@+id/txtUserEmail"
+        tools:text="hola"
+        android:imeOptions="actionNext"/>
+
+    <ImageView
+        android:id="@+id/ivUserEmailIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/user_button_min_width"
+        android:layout_marginEnd="@dimen/margin_2x"
+        android:contentDescription="@string/user_imgEmail"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/etxtUserEmail"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/etxtUserEmail"
+        app:srcCompat="@drawable/ic_email_24dp" />
+
+    <TextView
+        android:id="@+id/txtuserPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/margin_2x"
+        android:labelFor="@+id/etxtUserPhone"
+        android:text="@string/user_lblPhonenumber"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/etxtUserName" />
+
+    <EditText
+        android:id="@+id/etxtUserPhone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_2x"
+        android:layout_marginEnd="8dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/user_txtPhonenumber"
+        android:inputType="phone"
+        app:layout_constraintEnd_toStartOf="@+id/ivUserPhoneIcon"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/txtuserPhone" />
+
+    <ImageView
+        android:id="@+id/ivUserPhoneIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/user_button_min_width"
+        android:layout_marginEnd="@dimen/margin_2x"
+        android:contentDescription="@string/user_imgPhonenumber"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/etxtUserPhone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/etxtUserPhone"
+        app:srcCompat="@drawable/ic_call_24dp" />
+
+    <TextView
+        android:id="@+id/txtUserAdress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_2x"
+        android:hint="@string/user_txtName"
+        android:labelFor="@id/etxtUserAddress"
+        android:text="@string/user_imgAddress"
+        app:layout_constraintStart_toStartOf="@+id/etxtUserEmail"
+        app:layout_constraintTop_toBottomOf="@+id/etxtUserEmail" />
+
+    <EditText
+        android:id="@+id/etxtUserAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/user_txtAddress"
+        android:inputType="textPostalAddress"
+        app:layout_constraintEnd_toStartOf="@+id/ivUserMapIcon"
+        app:layout_constraintStart_toStartOf="@+id/txtUserAdress"
+        app:layout_constraintTop_toBottomOf="@+id/txtUserAdress"
+        tools:text="hola" />
+
+    <ImageView
+        android:id="@+id/ivUserMapIcon"
+        android:layout_width="@dimen/user_button_min_width"
+        android:layout_height="@dimen/user_button_min_width"
+        android:layout_marginEnd="@dimen/margin_2x"
+        android:contentDescription="@string/user_imgAddress"
+        app:layout_constraintBottom_toBottomOf="@+id/etxtUserAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/etxtUserAddress"
+        app:srcCompat="@drawable/ic_map_24dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <ImageView
+        android:id="@+id/ivUserAvatar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/user_imgPhoto"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+
+    <TextView
+        android:id="@+id/txtUserWeb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_2x"
+        android:labelFor="@+id/etxtUserWeb"
+        android:text="@string/user_lblWeb"
+        app:layout_constraintStart_toStartOf="@+id/etxtUserAddress"
+        app:layout_constraintTop_toBottomOf="@+id/etxtUserAddress" />
+
+    <EditText
+        android:id="@+id/etxtUserWeb"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/user_txtWeb"
+        android:inputType="textPersonName"
+        android:imeOptions="actionDone"
+        app:layout_constraintEnd_toStartOf="@+id/ivUserWebIcon"
+        app:layout_constraintStart_toStartOf="@+id/txtUserWeb"
+        app:layout_constraintTop_toBottomOf="@+id/txtUserWeb" />
+
+    <ImageView
+        android:id="@+id/ivUserWebIcon"
+        android:layout_width="@dimen/user_button_min_width"
+        android:layout_height="@dimen/user_button_min_width"
+        android:layout_marginEnd="@dimen/margin_2x"
+        android:contentDescription="@string/user_imgWeb"
+        app:layout_constraintBottom_toBottomOf="@+id/etxtUserWeb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/etxtUserWeb"
+        app:srcCompat="@drawable/ic_web_24dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
