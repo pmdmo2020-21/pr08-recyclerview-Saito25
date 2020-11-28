@@ -22,6 +22,11 @@ object DataBase : DataSource {
         updateStudentsLiveDate()
     }
 
+    override fun recoveryUser(user: User) {
+        users.add(user)
+        updateStudentsLiveDate()
+    }
+
     override fun updateUser(user: User) {
         val position: Int = users.indexOfFirst { it.id == user.id }
         if(position >= 0) {

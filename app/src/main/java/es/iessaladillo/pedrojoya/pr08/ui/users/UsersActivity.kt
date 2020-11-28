@@ -14,6 +14,7 @@ import es.iessaladillo.pedrojoya.pr08.data.model.User
 import es.iessaladillo.pedrojoya.pr08.databinding.UsersActivityBinding
 import es.iessaladillo.pedrojoya.pr08.ui.add_user.AddUserActivity
 import es.iessaladillo.pedrojoya.pr08.ui.edit_user.EditUserActivity
+import es.iessaladillo.pedrojoya.pr08.utils.observeEvent
 import es.iessaladillo.pedrojoya.pr08.utils.setOnSwipeListener
 
 class UsersActivity : AppCompatActivity() {
@@ -60,6 +61,11 @@ class UsersActivity : AppCompatActivity() {
 
     private fun observeUsers() {
         viewModel.students.observe(this) { updateList(it) }
+        viewModel.onShowMessage.observeEvent(this) {
+            Snackbar.make(binding.root, it, Snackbar.LENGTH_LONG)
+                    .setAction(R.string.users_undo) { viewModel.addStudent() }
+                    .show()
+        }
     }
 
     private fun navigateToAddUser() {
@@ -86,18 +92,7 @@ class UsersActivity : AppCompatActivity() {
     private fun deleteUser(position: Int) {
         val user: User = listAdapter.currentList[position]
         viewModel.delete(user)
-        showUndo(user)
     }
-
-    private fun showUndo(user: User) {
-        Snackbar.make(
-                binding.root,
-                getString(R.string.users_deleted, user.name),
-                Snackbar.LENGTH_LONG)
-                .setAction(R.string.users_undo) { viewModel.addStudent(user) }
-                .show()
-    }
-
 
     // NO TOCAR: Estos métodos gestionan el menú y su gestión
 

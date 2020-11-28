@@ -9,5 +9,6 @@ interface DataSource {
     fun insertUser(user: User)
     fun updateUser(user: User)
     fun deleteUser(user: User)
+    fun recoveryUser(user: User)
 
 }
