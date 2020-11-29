@@ -152,6 +152,7 @@
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/user_txtWeb"
+        android:imeOptions="actionDone"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toStartOf="@+id/ivUserWebIcon"
         app:layout_constraintStart_toStartOf="@+id/txtUserWeb"
@@ -172,13 +173,14 @@
         android:id="@+id/etxtUserEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/user_txtEmail"
+        android:imeOptions="actionNext"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toStartOf="@+id/ivUserEmailIcon"
         app:layout_constraintStart_toStartOf="@+id/txtUserEmail"
-        app:layout_constraintTop_toBottomOf="@+id/txtUserEmail"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/txtUserEmail" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -191,10 +193,10 @@
         android:id="@+id/ivUserAvatar"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:contentDescription="@string/user_imgPhoto"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:scaleType="centerCrop"
-        android:contentDescription="@string/user_imgPhoto" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
