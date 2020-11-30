@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
-    package="es.iessaladillo.pedrojoya.pr06"
+    package="es.iessaladillo.pedrojoya.pr08"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -16,7 +16,7 @@
         android:theme="@style/Theme.App"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".ui.users.UsersActivity"
+            android:name="es.iessaladillo.pedrojoya.pr08.ui.users.UsersActivity"
             android:label="@string/users_title">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -24,14 +24,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.edit_user.EditUserActivity"
+            android:name="es.iessaladillo.pedrojoya.pr08.ui.edit_user.EditUserActivity"
             android:label="@string/edit_user_title"
-            android:parentActivityName=".ui.users.UsersActivity"
+            android:parentActivityName="es.iessaladillo.pedrojoya.pr08.ui.users.UsersActivity"
             android:windowSoftInputMode="adjustPan"/>
         <activity
-            android:name=".ui.add_user.AddUserActivity"
+            android:name="es.iessaladillo.pedrojoya.pr08.ui.add_user.AddUserActivity"
             android:label="@string/add_user_title"
-            android:parentActivityName=".ui.edit_user.EditUserActivity"/>
+            android:parentActivityName="es.iessaladillo.pedrojoya.pr08.ui.edit_user.EditUserActivity"/>
     </application>
 
 </manifest>

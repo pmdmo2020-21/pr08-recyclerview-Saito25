@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Usuarios</string>
+    <string name="edit_user_title">Perfil del usuario</string>
+    <string name="add_user_title">Agregar usuario</string>
+
+    <string name="user_lblName">Nombre</string>
+    <string name="user_txtName">(nombre)</string>
+    <string name="user_lblEmail">email</string>
+    <string name="user_imgPhoto">Avatar</string>
+    <string name="user_lblPhonenumber">Número de teléfono</string>
+    <string name="user_lblAddress">Dirección</string>
+    <string name="user_txtAddress">(dirección)</string>
+    <string name="user_txtPhonenumber">(teléfono)</string>
+    <string name="user_txtEmail">(email)</string>
+    <string name="user_lblWeb">Web</string>
+    <string name="user_txtWeb">(url)</string>
+    <string name="user_imgEmail">Email</string>
+    <string name="user_imgWeb">Web</string>
+    <string name="user_imgAddress">Dirección</string>
+    <string name="user_imgPhonenumber">Número de teléfono</string>
+    <string name="user_save">Guardar</string>
+    <string name="user_invalid_data">Información inválida</string>
+
+    <string name="users_title">Usuarios</string>
+    <string name="users_item_btnEdit">Editar</string>
+    <string name="users_item_btnDelete">Eliminar</string>
+    <string name="users_item_imgPhoto">Foto</string>
+    <string name="users_lblEmptyView">No hay usuarios</string>
+    <string name="users_add">Añadir usuario</string>
+    <string name="users_deleted">%1$s borrado</string>
+    <string name="users_undo">Deshacer</string>
+</resources>

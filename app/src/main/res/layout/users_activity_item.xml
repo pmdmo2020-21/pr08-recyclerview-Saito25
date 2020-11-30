@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -13,7 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin"
         android:layout_marginTop="@dimen/margin"
-        android:layout_marginEnd="@dimen/margin">
+        android:layout_marginEnd="@dimen/margin"
+        android:layout_marginBottom="@dimen/margin">
 
         <!-- CONTENIDO DE LA TARJETA: Nombre, email y teléfono.
              A los botones se les debe dar el estilo
@@ -22,6 +24,61 @@
              @dimen/users_item_imgPhoto_width
         -->
 
+        <TextView
+            android:id="@+id/txtUsersItemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionMode.Title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Baldomero" />
+
+        <TextView
+            android:id="@+id/txtUsersItemEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionMode.Title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtUsersItemName"
+            tools:text="baldmero@gmail.es" />
+
+        <TextView
+            android:id="@+id/txtUsersItemPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionMode.Title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtUsersItemEmail"
+            tools:text="625886840" />
+
+        <ImageView
+            android:id="@+id/ivUsersItemAvatar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/user_imgPhoto"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@+id/txtUsersItemPhone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintDimensionRatio="1"/>
+
+        <Button
+            android:id="@+id/btnUsersItemEdit"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/users_item_btnEdit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtUsersItemPhone" />
+
+        <Button
+            android:id="@+id/btnUsersItemDelete"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/users_item_btnDelete"
+            app:layout_constraintStart_toEndOf="@+id/btnUsersItemEdit"
+            app:layout_constraintTop_toBottomOf="@+id/txtUsersItemPhone" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>
