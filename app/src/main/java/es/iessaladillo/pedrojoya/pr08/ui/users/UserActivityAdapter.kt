@@ -1,7 +1,6 @@
 package es.iessaladillo.pedrojoya.pr08.ui.users
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -13,7 +12,7 @@ import es.iessaladillo.pedrojoya.pr08.utils.loadUrl
 typealias OnEditClickListener = (position: Int) -> Unit
 typealias OnDeleteClickListener = (position: Int) -> Unit
 
-class UserActivityAdapter:  ListAdapter<User, UserActivityAdapter.ViewHolder>(StudentDiffCallback) {
+class UserActivityAdapter:  ListAdapter<User, UserActivityAdapter.ViewHolder>(UserDiffCallback) {
 
     var onEditClickListener: OnEditClickListener? = null
     var onDeleteClickListener: OnDeleteClickListener? = null
@@ -60,7 +59,7 @@ class UserActivityAdapter:  ListAdapter<User, UserActivityAdapter.ViewHolder>(St
         }
     }
 
-    object StudentDiffCallback: DiffUtil.ItemCallback<User>() {
+    object UserDiffCallback: DiffUtil.ItemCallback<User>() {
         override fun areItemsTheSame(oldItem: User, newItem: User): Boolean =
                 oldItem.id == newItem.id
 
